@@ -17,24 +17,14 @@ driver.find_element("name","reg_email_confirmation__").send_keys("dandevaralaksh
 time.sleep(2)
 driver.find_element("name","reg_passwd__").send_keys("VaraLak@410")
 time.sleep(2)
-day = driver.find_element("id","day")
-obj = Select(day)
-obj.select_by_visible_text("30")
-
-month = driver.find_element("name","birthday_month")
-obj = Select(month)
-time.sleep(2)
-obj.select_by_value("10")
-
-year = driver.find_element("id","year")
-obj = Select(year)
-obj.select_by_visible_text("2000")
-time.sleep(2)
-driver.find_element("xpath", '(//input[@class="_8esa"])[1]').click()
+driver.find_element("xpath",'//select[@id="day"]//option[10]').click()
+driver.find_element("xpath",'//select[@id="month"]//option[11]').click()
+driver.find_element("xpath",'//select[@id="year"]//option[20]').click()
+driver.find_element("xpath", '(//input[@type="radio"])[1]').click()
 time.sleep(2)
 driver.find_element("xpath",'(//button[text()="Sign Up"])[1]').click()
 time.sleep(30)
-driver.find_element("xpath",'//button[@type="submit"]').click()
+driver.find_element("xpath",'(//button[@type="submit"])[1]').click()
 
 
 
